@@ -1,4 +1,4 @@
-#Interview Exercise
+*Interview Exercise*
 
 The goal of this exercise is the measure the candidates ability in the following areas:
 
@@ -9,11 +9,11 @@ The goal of this exercise is the measure the candidates ability in the following
 5.	Utilizing Kubernetes and supporting technologies for Continuous Deployment
 
 
-##Part 1 – Ansible Roles
+**Part 1 – Ansible Roles
 
 Create an Ansible Role which installs Nginx.
 
-###Criteria:
+**Criteria:
 1.	Create a GitHub repository which will contain the new role.
 2.	Create the new role following the standard directory structure for Ansible Roles.
 3.	Add tasks to the role which will install Nginx from the Linux distribution’s package manager.  The role should support APT and YUM as package managers.
@@ -24,11 +24,11 @@ Bonus Points:
 -	Provide unit tests for the role using a server spec tool like https://goss.rocks/.
 
 
-##Part 2 – Ansible Playbooks
+**Part 2 – Ansible Playbooks
 
  Create an Ansible Palybook which utilizes the Ansible Role from Part 1.
 
-###Criteria
+***Criteria***
 1.	Create a GitHub repository which will contain the new playbook.
 2.	Create the new playbook following the standard directory structure for Ansible Playbooks.
 3.	Create a dependency file for the playbook containing the role created in Part 1.  The role created in Part 1 should not be committed and pushed to the playbook repository.
@@ -41,11 +41,11 @@ Bonus Points:
 -	Update the playbook to stop and commit the running Docker containers into Docker images.
 
 
-##Part 3 – Kubernetes and Helm
+**Part 3 – Kubernetes and Helm
 
 Create a Nginx Helm Chart and deploy to Kubernetes.
 
-###Criteria:
+***Criteria:***
 1.	Create a GitHub repository which will contain the Helm Chart.
 2.	Create a new Helm Chart using the standard directory structure.
 3.	Populate the Helm Chart with templates which will create:
