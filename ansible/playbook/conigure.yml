@@ -1,0 +1,8 @@
+---
+- hosts: all
+  user: root
+  sudo: yes
+  roles:
+     - roles/common 
+     - roles/nginx-server
+

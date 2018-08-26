@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_fact: yes
+  - tasks:
+    - name: Stopping Centos
+      shell: docker stop centos-container 
+    - name: Stopping Ubuntu
+      shell: docker stop ubuntu-container
+   

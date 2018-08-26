@@ -1,0 +1,5 @@
+[centos_hosts]
+centos-container
+
+[debian_hosts]
+ubuntu-container

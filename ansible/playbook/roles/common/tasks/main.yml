@@ -1,0 +1,26 @@
+---
+- name: UPDATE - Debian Platform
+  shell: apt-get update -y && apt-get upgrade -y
+  when: ansible_os_family == 'Debian'
+
+- name: BASIC APPLICATION - DEBIAN Platform
+  apt: pkg={{ item }} state=latest
+  with_items:
+   - vim
+   - at
+   - net-tools
+  when: ansible_os_family == "Debian"
+
+- name: UPDATE - RHEL Platform
+  shell: yum update -y
+  when: ansible_os_family == "RedHat"
+
+- name: BASIC APPLICATION - RHEL Platform
+  yum: pkg={{ item }} state=latest
+  with_items:
+   - epel-release
+   - vim
+   - at
+   - net-tools
+  when: ansible_os_family == "RedHat"
+
