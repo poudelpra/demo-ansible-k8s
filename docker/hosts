@@ -1,5 +1,8 @@
-[centos_hosts]
-centos-container
+[localmachine]
+192.168.88.3
 
-[debian_hosts]
-ubuntu-container
+[dockerhost1]
+159.65.66.131
+
+[dockerhost2]
+104.248.79.31
