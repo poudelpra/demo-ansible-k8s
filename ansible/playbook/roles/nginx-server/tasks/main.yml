@@ -3,11 +3,16 @@
   apt: name=nginx state=latest
   when: ansible_os_family == 'Debian'
   notify:
-    name: Start Nginx
+    - Start Nginx
 
 - name: Nginx Install - RHEL Platform
   yum: pkg=nginx state=latest
   when: ansible_os_family == "RedHat"
   notify:
-     name: Start Nginx
+     - Start Nginx
+
+- name: Deploy a file
+  copy: src=files/index.html dest=/usr/share/nginx/html/index.html
+  notify:
+     - Start Nginx
 
