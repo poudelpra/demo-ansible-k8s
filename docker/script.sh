@@ -8,11 +8,11 @@ docker rmi -f ubuntu-template
 docker rmi -f centos-template
 
 echo "COMMITTING UBUNTU CONTAINER"
-docker commit ubuntu-container ubuntu-template
+docker commit ubuntu_container ubuntu-template
 
 echo "COMMITTING CENTOS CONTAINER"
-docker commit centos-container centos-template
-
+docker commit centos_container centos-template
+             
 
 #DISPLAYING THE NEWLY TAGED IMAGE
 echo " THE FOLLOWING IMAGES WERE TAGGED CURRENTLY"

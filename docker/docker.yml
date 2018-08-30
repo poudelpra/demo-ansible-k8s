@@ -1,9 +1,40 @@
 ---
-- hosts: all
-  gather_fact: yes
-  - tasks:
-    - name: Stopping Centos
-      shell: docker stop centos-container 
-    - name: Stopping Ubuntu
-      shell: docker stop ubuntu-container
-   
+- name: Creating Centos and Debian COntainers
+  hosts: localmachine
+  tasks:
+##STARTING CONTAINER
+    - name: Starting Centos Container
+      docker_container:
+          name: centos_container
+          image: centos:latest
+          state: started
+          published_ports:
+              - '3200:80'
+          volumes:
+            - host_volume:/container_volume
+    - name: Starting Ubuntu Container
+      docker_container:
+          name: ubuntu_container
+          image: ubuntu:latest
+          state: started
+          published_ports:
+              - '3300:80'
+          volumes:
+            - host_volume:/container_volume
+
+## STOPPING CONTAINER
+    - name: Stopping Centos Container  
+      docker_container:
+          name: centos_container
+          state: stop
+    - name: Stopping Ubuntu Container
+      docker_container:
+          name: ubuntu_container
+          state: stop
+
+## COMMITTING CONTAINER
+    - name: Commit Centos Container
+      shell: docker commit centos_container centos-template 
+    - name: Commit Ubuntu Container
+      shell: docker commit ubuntu_container ubuntu-template
+
